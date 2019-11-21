@@ -3,12 +3,12 @@ require 'minitest/pride'
 require './lib/games'
 require './lib/event'
 
-@games = Games.new(@year)
+# @games = Games.new(year)
 
 puts "Hello. Welcome to Super Sports Games!"
 def start
   puts "Please enter the year for the games you want to work with:"
-  @year = gets.chomp
+  year = gets.chomp
   puts "Thank You."
   puts "What is the name of the event you wish to create?"
   event_name = gets.chomp.capitalize
@@ -27,27 +27,16 @@ def start
   player_array = [player_age_1, player_age_2, player_age_3, player_age_4, player_age_5]
   puts "Thank You."
   event = Event.new(event_name, player_array)
-  @game = Games.new(@year)
-  @game.add_event(event)
-  puts "#{@game.summary}"
-  # puts "Do you wish to add another event?(Yes or No)"
-  # another = gets.chomp.first
-  #   if another == "Y"
-  #     start
-  #   else
-  #     break
-  #   end
-  end
+  game = Games.new(year)
+  game.add_event(event)
+  puts "#{game.summary}"
 
-  loop do
-    start
-    puts "Do you wish to add another event?(Yes or No)"
-    another = gets.chomp
+  puts "Do you wish to add another event?(Yes or No)"
+  another = gets.chomp
     if another == "Yes"
       start
     else
-      puts "#{@game.all_events_summary}"
-      break
+      puts "#{game.all_events_summary}"
     end
   end
 # puts "Do you wish to add another event?(Yes or No)"
@@ -57,8 +46,8 @@ def start
 # else
 #   all_event_summery
 # end
-# start
-# all_event_summery = puts "#{game.all_events_summary}"
+start
+all_event_summery = puts "#{game.all_events_summary}"
 
 #
 # puts "Your event is #{event.name.capitalize}"

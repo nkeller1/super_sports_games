@@ -25,5 +25,5 @@ second_average = sum_num / count
 
 sq_rt = Math.sqrt(second_average)
 
-p sq_rt.round(2)
 # When you find the standard deviation, print it out
+p sq_rt.round(2)

@@ -14,10 +14,16 @@ end
 
 sq_array = []
 sub_array.each do |num|
-  require "pry"; binding.pry
-  sq_array << Math.sqrt(num)
+  sq_array << (num * num).round(2)
 end
 
-p sq_array
+sum_num = sq_array.sum do |num|
+  num
+end
 
+second_average = sum_num / count
+
+sq_rt = Math.sqrt(second_average)
+
+p sq_rt.round(2)
 # When you find the standard deviation, print it out
